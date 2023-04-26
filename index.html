@@ -9,34 +9,35 @@
   <body>
     <h1>MOKEPON! 🔥💧🌱</h1>
     <section id="select-character">
-        <h2>Select your mokepon</h2>
+      <h2>Select your mokepon</h2>
       <h2>
         <label for="Iceberg">Iceberg</label>
-        <input type="radio" name="mokepon" id="Iceberg">
-        
+        <input type="radio" name="mokepon" id="Iceberg" />
+
         <label for="Aracrix">Aracrix</label>
-        <input type="radio" name="mokepon" id="Aracrix">
+        <input type="radio" name="mokepon" id="Aracrix" />
 
         <label for="Drogon">Drogon</label>
-        <input type="radio" name="mokepon" id="Drogon">
-        <button>select</button>
+        <input type="radio" name="mokepon" id="Drogon" />
+        <button id="button-character">select</button>
       </h2>
     </section>
     <section id="select-attack">
-        <h2>Select your attack</h2>
-      <p>Your pet has <span>3</span> lifes</p>
-      <p>Your enemy's pet has <span>3</span> lifes</p>
+      <h2 id="button-attack">Select your attack</h2>
+      <p>Your pet <span id="character-player"></span> has <span>3</span> lifes</p>
+      <p>Your enemy's pet <span id="character-pc"></span> has <span>3</span> lifes</p>
       <p>
-        <button>Fire 🔥</button>
-        <button>Water 💧</button>
-        <button>Plant 🌱</button>
+        <button id="button-fire">Fire 🔥</button>
+        <button id="button-water">Water 💧</button>
+        <button id="button-plant">Plant 🌱</button>
       </p>
     </section>
     <section id="comments">
       your pet choose FIRE, the enemy choose PLANT - YOU WIN!
     </section>
     <section id="restart">
-      <p><button>Restart</button></p>
+      <p><button id="button-restart">Restart</button></p>
     </section>
+    <script src="code/main.js"></script>
   </body>
 </html>
