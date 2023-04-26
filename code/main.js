@@ -128,9 +128,9 @@ function combat() {
 
 function lifeCounter() {
   if (playerLifes == 0) {
-    finalMessage("Congrats! you win the battle!");
-  } else if (enemyLifes == 0) {
     finalMessage("oh no, you have lost the battle :(");
+  } else if (enemyLifes == 0) {
+    finalMessage("Congrats! you win the battle!");
   }
 }
 
