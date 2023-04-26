@@ -93,11 +93,8 @@ function combat() {
     newMessage("YOU TIE!");
   } else if (
     (playerAttack == "FIRE ATTACK!" && pcRandomAttack == "PLANT ATTACK!") ||
-    (playerAttack == "WATER ATTACK!" &&
-      pcRandomAttack == "FIRE ATTACK!" &&
-      playerAttack == "PLANT ATTACK!" &&
-      pcRandomAttack == "WATER ATTACK!")
-  ) {
-    newMessage("YOU WIN!");
+    (playerAttack == "WATER ATTACK!" && pcRandomAttack == "FIRE ATTACK!") ||
+    (playerAttack == "PLANT ATTACK!" && pcRandomAttack == "WATER ATTACK!")
+  ) { newMessage("YOU WIN!");
   } else newMessage("YOU LOSE");
 }
