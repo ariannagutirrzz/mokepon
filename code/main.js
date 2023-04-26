@@ -97,8 +97,8 @@ function newMessage(result) {
     " your pet choosed " +
     playerAttack +
     " your enemy choosed " +
-    pcRandomAttack +
-    result;
+    pcRandomAttack + " "
+     result;
 
   sectionMessage.appendChild(message);
 }
