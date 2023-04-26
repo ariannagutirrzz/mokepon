@@ -9,7 +9,20 @@ let pcRandomAttack;
 let enemyLifes = 3;
 let playerLifes = 3;
 
+let sectionRestartButton = document.getElementById("restart-button");
+sectionRestartButton.style.display = "none";
+
+let sectionAttack = document.getElementById("select-attack");
+sectionAttack.style.display = "none";
+
 function playerCharacter() {
+ 
+  let sectionCharacter = document.getElementById("select-character");
+  sectionCharacter.style.display = "none";
+
+  let sectionAttack = document.getElementById("select-attack");
+  sectionAttack.style.display = "block";
+
   const $ = (selector) => document.getElementById(selector);
 
   let inputIceberg = $("Iceberg");
@@ -122,6 +135,10 @@ function lifeCounter() {
 }
 
 function finalMessage(finalResult) {
+
+  let sectionRestartButton = document.getElementById("restart-button");
+  sectionRestartButton.style.display = "block";
+
   let sectionMessage = document.getElementById("comments");
   let message = document.createElement("p");
   message.innerHTML = finalResult;
