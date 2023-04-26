@@ -1,8 +1,14 @@
+//variable para la funcion que dara paso luego de ejecutar el boton de seleccionar personaje
 let buttonCharacter = document.getElementById("button-character");
-buttonCharacter.addEventListener("click", playerCharacter); //VARIABLE PARA LA FUNCION QUE DARA PASO LUEGO DE SELECCIONAR A LOS PERSONAJES PARA JUGAR
+buttonCharacter.addEventListener("click", playerCharacter);
+
+// $ para simplificar el codigo y evitar escribir document.getElementById tantas veces
+
+let playerAttack;
+let pcRandomAttack;
 
 function playerCharacter() {
-  const $ = (selector) => document.getElementById(selector); // $ para simplificar el codigo y evitar escribir document.getElementById tantas veces
+  const $ = (selector) => document.getElementById(selector);
 
   let inputIceberg = $("Iceberg");
   let inputAracrix = $("Aracrix");
@@ -22,14 +28,76 @@ function randomNumber(min, max) {
 }
 
 function pcCharacter() {
-  let randomAttack = randomNumber(1, 3);
+  let randomCharacter = randomNumber(1, 3);
   let characterPc = document.getElementById("character-pc");
 
-  if (randomAttack == 1) {
+  if (randomCharacter == 1) {
     characterPc.innerHTML = "Iceberg";
-  } else if (randomAttack == 2) {
-    characterPc.innerHTML = "Aracrix"
-  } else if (randomAttack == 3) {
-    characterPc.innerHTML = "Drogon"
-  } else (characterPc.innerHTML = " ");
-}   
+  } else if (randomCharacter == 2) {
+    characterPc.innerHTML = "Aracrix";
+  } else characterPc.innerHTML = "Drogon";
+}
+
+// seleccion de ataques del jugador
+
+let fireButton = document.getElementById("fire-button");
+fireButton.addEventListener("click", fireAttack);
+let waterButton = document.getElementById("water-button");
+waterButton.addEventListener("click", waterAttack);
+let plantButton = document.getElementById("plant-button");
+plantButton.addEventListener("click", plantAttack);
+
+function fireAttack() {
+  playerAttack = "FIRE ATTACK!";
+  // alert(playerAttack);
+  randomAttack();
+}
+function waterAttack() {
+  playerAttack = "WATER ATTACK!";
+  // alert(playerAttack);
+  randomAttack();
+}
+function plantAttack() {
+  playerAttack = "PLANT ATTACK!";
+  // alert(playerAttack);
+  randomAttack();
+}
+
+function randomAttack() {
+  let pcAttack = randomNumber(1, 3);
+  if (pcAttack == 1) {
+    pcRandomAttack = "FIRE ATTACK!";
+  } else if (pcAttack == 2) {
+    pcRandomAttack = "WATER ATTACK!";
+  } else pcRandomAttack = "PLANT ATTACK!";
+  // alert(pcRandomAttack);
+
+  combat();
+}
+
+function newMessage(result) {
+  let sectionMessage = document.getElementById("comments");
+  let message = document.createElement("p");
+  message.innerHTML =
+    " your pet choosed " +
+    playerAttack +
+    " your enemy choosed " +
+    pcRandomAttack +
+    result;
+
+  sectionMessage.appendChild(message);
+}
+
+function combat() {
+  if (playerAttack == pcRandomAttack) {
+    newMessage("YOU TIE!");
+  } else if (
+    (playerAttack == "FIRE ATTACK!" && pcRandomAttack == "PLANT ATTACK!") ||
+    (playerAttack == "WATER ATTACK!" &&
+      pcRandomAttack == "FIRE ATTACK!" &&
+      playerAttack == "PLANT ATTACK!" &&
+      pcRandomAttack == "WATER ATTACK!")
+  ) {
+    newMessage("YOU WIN!");
+  } else newMessage("YOU LOSE");
+}
