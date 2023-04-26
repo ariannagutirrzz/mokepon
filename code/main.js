@@ -6,6 +6,8 @@ buttonCharacter.addEventListener("click", playerCharacter);
 
 let playerAttack;
 let pcRandomAttack;
+let enemyLifes = 3;
+let playerLifes = 3;
 
 function playerCharacter() {
   const $ = (selector) => document.getElementById(selector);
@@ -89,12 +91,53 @@ function newMessage(result) {
 }
 
 function combat() {
+  let spanPlayerLifes = document.getElementById("player-lifes");
+  let spanEnemyLifes = document.getElementById("enemy-lifes");
+
   if (playerAttack == pcRandomAttack) {
     newMessage("YOU TIE!");
   } else if (
     (playerAttack == "FIRE ATTACK!" && pcRandomAttack == "PLANT ATTACK!") ||
     (playerAttack == "WATER ATTACK!" && pcRandomAttack == "FIRE ATTACK!") ||
     (playerAttack == "PLANT ATTACK!" && pcRandomAttack == "WATER ATTACK!")
-  ) { newMessage("YOU WIN!");
-  } else newMessage("YOU LOSE");
+  ) {
+    newMessage("YOU WIN!");
+    enemyLifes--;
+    spanEnemyLifes.innerHTML = enemyLifes;
+  } else {
+    newMessage("YOU LOSE");
+    playerLifes--;
+    spanPlayerLifes.innerHTML = playerLifes;
+  }
+
+  lifeCounter();
+}
+
+function lifeCounter() {
+  if (playerLifes == 0) {
+    finalMessage("Congrats! you win the battle!");
+  } else if (enemyLifes == 0) {
+    finalMessage("oh no, you have lost the battle :(");
+  }
+}
+
+function finalMessage(finalResult) {
+  let sectionMessage = document.getElementById("comments");
+  let message = document.createElement("p");
+  message.innerHTML = finalResult;
+  sectionMessage.appendChild(message);
+
+  let fireButton = document.getElementById("fire-button");
+  fireButton.disabled = true;
+  let waterButton = document.getElementById("water-button");
+  waterButton.disabled = true;
+  let plantButton = document.getElementById("plant-button");
+  plantButton.disabled = true;
+}
+
+let restartButton = document.getElementById("restart-button");
+restartButton.addEventListener("click", restart);
+
+function restart() {
+  location.reload();
 }
