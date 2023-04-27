@@ -95,7 +95,7 @@ function newMessage(result) {
   let message = document.createElement("p");
   message.innerHTML =
     " your pet choosed " +
-    playerAttack +
+    playerAttack + " "
     " your enemy choosed " +
     pcRandomAttack + " "
      result;
