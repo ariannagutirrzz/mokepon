@@ -6,40 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mokepon</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <h1>MOKEPON! 🔥💧🌱</h1>
-    <section id="select-character">
-      <h2>Select your mokepon</h2>
-      <h2>
-        <label for="Iceberg">Iceberg</label>
-        <input type="radio" name="mokepon" id="Iceberg" />
+      <section id="select-character">
+            <h1 class="title">MOKEPON!</h1>
 
-        <label for="Aracrix">Aracrix</label>
-        <input type="radio" name="mokepon" id="Aracrix" />
+            <h2 class="subtitle">Select your mokepon</h2>
+            
+            <div class="characters-div">
+              <label class="characters" for="Iceberg"><p>Zepyhr</p> <img src="./assets/character1.png" alt="Zepyhr"></label>
+              <input type="radio" name="mokepon" id="Iceberg" />
+  
+              <label class="characters" for="Aracrix"><p>Thorne</p> <img src="./assets/character2.png" alt="Thorne"></label>
+              <input type="radio" name="mokepon" id="Aracrix" />
+  
+              <label class="characters" for="Drogon"><p>Nyx</p> <img src="./assets/character3.png" alt="Nyx"></label>
+              <input type="radio" name="mokepon" id="Drogon" />
+            </div>
 
-        <label for="Drogon">Drogon</label>
-        <input type="radio" name="mokepon" id="Drogon" />
-        <button id="button-character">select</button>
-      </h2>
-    </section>
-    <section id="select-attack">
-      <h2 id="button-attack">Select your attack</h2>
-      <p>Your pet <span id="character-player"></span> has <span id="player-lifes">3</span> lifes</p>
-      <p>Your enemy's pet <span id="character-pc"></span> has <span id="enemy-lifes">3</span> lifes</p>
-      <p>
-        <p>start the fight!</p>
-        <button id="fire-button">Fire 🔥</button>
-        <button id="water-button">Water 💧</button>
-        <button id="plant-button">Plant 🌱</button>
-      </p>
-    </section>
-    <section id="comments">
-     
-    </section>
-    <section id="restart">
-      <p><button id="restart-button">Restart</button></p>
-    </section>
-    <script src="code/main.js"></script>
+            <button id="button-character">START</button>
+            
+
+      </section>
+      <section id="select-attack">
+          <h2 id="button-attack">Select your attack</h2>
+          <p>Your pet <span id="character-player"></span> has <span id="player-lifes">3</span> lifes</p>
+          <p>Your enemy's pet <span id="character-pc"></span> has <span id="enemy-lifes">3</span> lifes</p>
+          <p>
+            <p>start the fight!</p>
+            <button id="fire-button">Fire 🔥</button>
+            <button id="water-button">Water 💧</button>
+            <button id="plant-button">Plant 🌱</button>
+          </p>
+      </section>
+      <section id="comments">
+      
+      </section>
+      <section id="restart">
+          <p><button id="restart-button">Restart</button></p>
+      </section>
+          <script src="code/main.js"></script>
   </body>
 </html>
