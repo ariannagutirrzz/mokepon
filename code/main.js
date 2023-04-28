@@ -30,9 +30,9 @@ function playerCharacter() {
   let inputDrogon = $("Drogon");
   let playerCharacter = $("character-player");
 
-  if (inputIceberg.checked) playerCharacter.innerHTML = "Iceberg";
-  else if (inputAracrix.checked) playerCharacter.innerHTML = "Aracrix";
-  else if (inputDrogon.checked) playerCharacter.innerHTML = "Drogon";
+  if (inputIceberg.checked) playerCharacter.innerHTML = "Zephyr";
+  else if (inputAracrix.checked) playerCharacter.innerHTML = "Thorne";
+  else if (inputDrogon.checked) playerCharacter.innerHTML = "Nyx";
   else alert("you have to choose a character to start");
 
   pcCharacter();
@@ -47,10 +47,10 @@ function pcCharacter() {
   let characterPc = document.getElementById("character-pc");
 
   if (randomCharacter == 1) {
-    characterPc.innerHTML = "Iceberg";
+    characterPc.innerHTML = "Zephyr";
   } else if (randomCharacter == 2) {
-    characterPc.innerHTML = "Aracrix";
-  } else characterPc.innerHTML = "Drogon";
+    characterPc.innerHTML = "Thorne";
+  } else characterPc.innerHTML = "Nyx";
 }
 
 // seleccion de ataques del jugador
@@ -94,9 +94,9 @@ function newMessage(result) {
   let sectionMessage = document.getElementById("comments");
   let message = document.createElement("p");
   message.innerHTML =
-    " your pet choosed " +
+    " your pet choosed  " +
     playerAttack + " "
-    " your enemy choosed " +
+    " your enemy choosed " + ""
     pcRandomAttack + " "
      result;
 

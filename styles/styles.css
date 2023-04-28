@@ -1,73 +1,81 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto Slab', serif;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
 }
 
 body {
-    background-color: #0A4D68;
+  background-color: #0a4d68;
+  overflow: hidden;
+}
 
+.superior {
+    -webkit-box-shadow: 1px 1px 37px 16px rgba(5,38,51,1);
+    -moz-box-shadow: 1px 1px 37px 16px rgba(5,38,51,1);
+    box-shadow: 1px 1px 37px 16px rgba(5,38,51,1);
+    border-radius: 1em;
+    padding: 15px;
+    text-align: center;
 }
 
 #select-character {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .characters {
-    width: 100px;
-    height: 100px;
-    border: 4px solid black;
-    padding: 10px;  
-    border-radius: 1em;
+    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border: 4px solid black;
+  padding: 10px;
+  border-radius: 1em;
 }
 
 .title {
-    font-size: 100px;
-    margin-bottom: 0;
-    color: #05BFDB;
-
+  font-size: 100px;
+  margin: 50px;
+  color: #f6f1f1;
 }
 
 .subtitle {
-    font-size: 40px;
-    color: #05BFDB;
-
+  font-size: 40px;
+  color: #f6f1f1;
+  margin-bottom: 50px;
 }
-
 
 input {
-    display: none;
+  display: none;
 }
 
-
 #button-character {
-    width: 120px;
-    height: 40px;
-    background-color: brown;
-    color: white;
-    border: 4px solid black;
-    border-radius: 1em;
-    margin-top: 14px;
+    cursor: pointer;
+  width: 120px;
+  height: 40px;
+  background-color: brown;
+  color: white;
+  border: 4px solid black;
+  border-radius: 1em;
+  margin-top: 15px;
 }
 
 .characters-div {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 .characters-div img {
-    width: 80px;
+  width: 80px;
 }
 
 .characters {
-    display: flex;
-    width: 180px;
-    height: 100px;
-    color: white;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  width: 180px;
+  height: 100px;
+  color: white;
+  align-items: center;
+  justify-content: center;
 }
-
