@@ -16,12 +16,7 @@ let sectionAttack = document.getElementById("select-attack");
 sectionAttack.style.display = "none";
 
 function playerCharacter() {
-  let sectionCharacter = document.getElementById("select-character");
-  sectionCharacter.style.display = "none";
-
-  let sectionAttack = document.getElementById("select-attack");
-  sectionAttack.style.display = "block";
-
+  
   const $ = (selector) => document.getElementById(selector);
 
   let inputIceberg = $("Iceberg");
@@ -49,7 +44,14 @@ function playerCharacter() {
       icon: 'warning',
       title: 'Choose a character to start!'
     })
+    return
   }
+  let sectionCharacter = document.getElementById("select-character");
+  sectionCharacter.style.display = "none";
+
+  let sectionAttack = document.getElementById("select-attack");
+  sectionAttack.style.display = "block";
+  
   pcCharacter();
 }
 
