@@ -16,7 +16,6 @@ let sectionAttack = document.getElementById("select-attack");
 sectionAttack.style.display = "none";
 
 function playerCharacter() {
- 
   let sectionCharacter = document.getElementById("select-character");
   sectionCharacter.style.display = "none";
 
@@ -33,10 +32,49 @@ function playerCharacter() {
   if (inputIceberg.checked) playerCharacter.innerHTML = "Zephyr";
   else if (inputAracrix.checked) playerCharacter.innerHTML = "Thorne";
   else if (inputDrogon.checked) playerCharacter.innerHTML = "Nyx";
-  else alert("you have to choose a character to start");
-
+  else alert("You have to choose a character to start")
   pcCharacter();
 }
+
+let Zephyr = document.getElementById("Zephyr");
+Zephyr.onclick = function () {
+  functionZephyr();
+};
+
+let Thorne = document.getElementById("Thorne");
+Thorne.onclick = function () {
+  functionThorne();
+};
+
+let Nyx = document.getElementById("Nyx");
+Nyx.onclick = function () {
+  functionNyx();
+};
+
+// new color function characters
+
+function functionZephyr() {
+  Thorne.classList.remove("playing");
+  Nyx.classList.remove("playing");
+  const zephyr = document.querySelector("#Zephyr");
+  zephyr.classList.add("playing");
+}
+
+function functionThorne() {
+  Zephyr.classList.remove("playing");
+  Nyx.classList.remove("playing");
+  const thorne = document.querySelector("#Thorne");
+  thorne.classList.add("playing");
+}
+
+function functionNyx() {
+  Zephyr.classList.remove("playing");
+  Thorne.classList.remove("playing");
+  const nyx = document.querySelector("#Nyx");
+  nyx.classList.add("playing");
+}
+
+//end functions
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -95,10 +133,12 @@ function newMessage(result) {
   let message = document.createElement("p");
   message.innerHTML =
     " your pet choosed  " +
-    playerAttack + " "
-    " your enemy choosed " + ""
-    pcRandomAttack + " "
-     result;
+    playerAttack +
+    " " +
+    " your enemy choosed " +
+    pcRandomAttack +
+    " ";
+  result;
 
   sectionMessage.appendChild(message);
 }
@@ -135,7 +175,6 @@ function lifeCounter() {
 }
 
 function finalMessage(finalResult) {
-
   let sectionRestartButton = document.getElementById("restart-button");
   sectionRestartButton.style.display = "block";
 

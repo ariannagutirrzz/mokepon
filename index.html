@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+
   </head>
   <body>
 
@@ -20,20 +21,18 @@
           <h2 class="subtitle">Select your mokepon</h2>
           
           <div class="characters-div">
-            <label class="characters" for="Iceberg"><p>Zepyhr</p> <img src="./assets/character1.png" alt="Zepyhr"></label>
+            <label class="characters" for="Iceberg" id="Zephyr">  <kbd>Zephyr</kbd> <img src="./assets/character1.png" alt="Zepyhr"></label>
             <input type="radio" name="mokepon" id="Iceberg" />
 
-            <label class="characters" for="Aracrix"><p>Thorne</p> <img src="./assets/character2.png" alt="Thorne"></label>
+            <label class="characters" for="Aracrix" id="Thorne"><kbd>Thorne</kbd> <img src="./assets/character2.png" alt="Thorne"></label>
             <input type="radio" name="mokepon" id="Aracrix" />
 
-            <label class="characters" for="Drogon"><p>Nyx</p> <img src="./assets/character3.png" alt="Nyx"></label>
+            <label class="characters" for="Drogon" id="Nyx"><kbd>Nyx</kbd> <img src="./assets/character3.png" alt="Nyx"></label>
             <input type="radio" name="mokepon" id="Drogon" />
         
           </div>
           <button id="button-character">START</button>
         </div>
-        
-     
            
       </section>
 
@@ -54,6 +53,8 @@
       <section id="restart">
           <p><button id="restart-button">Restart</button></p>
       </section>
+          
           <script src="code/main.js"></script>
+          
   </body>
 </html>
