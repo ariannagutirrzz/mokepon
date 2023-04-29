@@ -32,7 +32,24 @@ function playerCharacter() {
   if (inputIceberg.checked) playerCharacter.innerHTML = "Zephyr";
   else if (inputAracrix.checked) playerCharacter.innerHTML = "Thorne";
   else if (inputDrogon.checked) playerCharacter.innerHTML = "Nyx";
-  else alert("You have to choose a character to start")
+  else {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'warning',
+      title: 'Choose a character to start!'
+    })
+  }
   pcCharacter();
 }
 
