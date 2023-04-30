@@ -31,9 +31,6 @@ body {
   cursor: pointer;
   border: 4px solid rgba(1, 26, 42, 1);
   border-radius: 1em;
-  gap: 10px;
-  
-
 }
 
 .title {
@@ -45,7 +42,6 @@ body {
 .subtitle {
   font-size: 30px;
   color: #f6f1f1;
-  margin-bottom: 50px;
 }
 
 .playing {
@@ -87,4 +83,33 @@ input {
   color: white;
   align-items: center;
   justify-content: center;
+}
+
+#select-attack {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.attack-button {
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+  border: 3px solid black;
+  border-radius: 1em;
+  padding: 8px 12px;
+}
+
+
+.div-restart-button {
+  display: flex;
+  justify-content: center;
+}
+
+#restart-button {
+  background-color: brown;
+  border-radius: 1em;
+  border: 3px solid;
+  padding: 6px 12px;
 }

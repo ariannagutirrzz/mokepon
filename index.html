@@ -5,55 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mokepon</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
-
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <section id="select-character">
+      <div class="superior">
+        <h1 class="title">MOKEPON!</h1>
 
-      <section id="select-character">
-           
-        <div class="superior">
-          <h1 class="title">MOKEPON!</h1>
+        <h2 class="subtitle">Select your mokepon</h2>
 
-          <h2 class="subtitle">Select your mokepon</h2>
-          
-          <div class="characters-div">
-            <label class="characters" for="Iceberg" id="Zephyr">  <kbd>Zephyr</kbd> <img src="./assets/character1.png" alt="Zepyhr"></label>
-            <input type="radio" name="mokepon" id="Iceberg" />
+        <div class="characters-div">
+          <label class="characters" for="Iceberg" id="Zephyr">
+            <kbd>Zephyr</kbd> <img src="./assets/character1.png" alt="Zepyhr"
+          /></label>
+          <input type="radio" name="mokepon" id="Iceberg" />
 
-            <label class="characters" for="Aracrix" id="Thorne"><kbd>Thorne</kbd> <img src="./assets/character2.png" alt="Thorne"></label>
-            <input type="radio" name="mokepon" id="Aracrix" />
+          <label class="characters" for="Aracrix" id="Thorne"
+            ><kbd>Thorne</kbd> <img src="./assets/character2.png" alt="Thorne"
+          /></label>
+          <input type="radio" name="mokepon" id="Aracrix" />
 
-            <label class="characters" for="Drogon" id="Nyx"><kbd>Nyx</kbd> <img src="./assets/character3.png" alt="Nyx"></label>
-            <input type="radio" name="mokepon" id="Drogon" />
-        
-          </div>
-          <button id="button-character">START</button>
+          <label class="characters" for="Drogon" id="Nyx"
+            ><kbd>Nyx</kbd> <img src="./assets/character3.png" alt="Nyx"
+          /></label>
+          <input type="radio" name="mokepon" id="Drogon" />
         </div>
-           
-      </section>
+        <button id="button-character">START</button>
+      </div>
+    </section>
 
-      <section id="select-attack">
-          <h2 id="button-attack">Select your attack</h2>
-          <p>Your pet <span id="character-player"></span> has <span id="player-lifes">3</span> lifes</p>
-          <p>Your enemy's pet <span id="character-pc"></span> has <span id="enemy-lifes">3</span> lifes</p>
+    <section id="select-attack">
+      <div class="superior">
+        <h1 class="title">Mokepon!</h1>
+        <h2 class="subtitle">Select your attack</h2>
+
+        <div>
+          <button id="fire-button" class="attack-button">Fire 🔥</button>
+          <button id="water-button" class="attack-button">Water 💧</button>
+          <button id="plant-button" class="attack-button">Plant 🌱</button>
+        </div>
+
+        <div>
+          <section id="comments"></section>
+
+          <section id="restart">
+            <div class="div-restart-button"><button id="restart-button">Restart</button></div>
+          </section>
+        </div>
+        <div>
           <p>
-            <p>start the fight!</p>
-            <button id="fire-button">Fire 🔥</button>
-            <button id="water-button">Water 💧</button>
-            <button id="plant-button">Plant 🌱</button>
+            Your pet <span id="character-player"></span> has
+            <span id="player-lifes">3</span> lifes
           </p>
-      </section>
-      <section id="comments">
-      
-      </section>
-      <section id="restart">
-          <p><button id="restart-button">Restart</button></p>
-      </section>
-          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-          <script src="code/main.js"></script>
+
+          <p>
+            Your enemy's pet <span id="character-pc"></span> has
+            <span id="enemy-lifes">3</span> lifes
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="code/main.js"></script>
   </body>
 </html>
