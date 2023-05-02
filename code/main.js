@@ -160,6 +160,7 @@ function newMessage(result) {
   result;
 
   sectionMessage.appendChild(message);
+
 }
 
 function combat() {
