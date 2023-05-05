@@ -16,7 +16,6 @@ let sectionAttack = document.getElementById("select-attack");
 sectionAttack.style.display = "none";
 
 function playerCharacter() {
-  
   const $ = (selector) => document.getElementById(selector);
 
   let inputIceberg = $("Iceberg");
@@ -30,28 +29,28 @@ function playerCharacter() {
   else {
     const Toast = Swal.mixin({
       toast: true,
-      position: 'top-end',
+      position: "top-end",
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-    
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
     Toast.fire({
-      icon: 'warning',
-      title: 'Choose a character to start!'
-    })
-    return
+      icon: "warning",
+      title: "Choose a character to start!",
+    });
+    return;
   }
   let sectionCharacter = document.getElementById("select-character");
   sectionCharacter.style.display = "none";
 
   let sectionAttack = document.getElementById("select-attack");
   sectionAttack.style.display = "flex";
-  
+
   pcCharacter();
 }
 
@@ -148,19 +147,8 @@ function randomAttack() {
 }
 
 function newMessage(result) {
-  let sectionMessage = document.getElementById("comments");
-  let message = document.createElement("p");
-  message.innerHTML =
-    " your pet choosed  " +
-    playerAttack +
-    " " +
-    " your enemy choosed " +
-    pcRandomAttack +
-    " ";
-  result;
-
-  sectionMessage.appendChild(message);
-
+  let sectionMessage = document.getElementById("result");
+  sectionMessage.innerHTML = result;
 }
 
 function combat() {
@@ -188,7 +176,7 @@ function combat() {
 
 function lifeCounter() {
   if (playerLifes == 0) {
-    finalMessage("oh no, you have lost the battle :(");
+    finalMessage("oh no, you have lost the battle :( but not the war, try again!");
   } else if (enemyLifes == 0) {
     finalMessage("Congrats! you win the battle!");
   }
