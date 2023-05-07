@@ -111,7 +111,7 @@ input {
   cursor: pointer;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 420px) {
   .characters-div {
     flex-direction: column;
     align-items: center;
