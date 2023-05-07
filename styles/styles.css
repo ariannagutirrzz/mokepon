@@ -52,6 +52,10 @@ input {
   display: none;
 }
 
+input:checked + label {
+  background-color: rgba(6, 4, 163, 1);
+}
+
 #button-character {
   cursor: pointer;
   width: 120px;
@@ -126,3 +130,4 @@ input {
     margin-bottom: 20px;
   }
 }
+
