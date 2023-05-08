@@ -1,17 +1,21 @@
 * {
   box-sizing: border-box;
+  color: white;
   font-family: "Roboto Slab", serif;
 }
 
 body {
   background-color: #0a4d68;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1200' height='560' preserveAspectRatio='none' viewBox='0 0 1200 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1070%26quot%3b)' fill='none'%3e%3crect width='1200' height='560' x='0' y='0' fill='rgba(9%2c 44%2c 65%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c421.901C83.3%2c415.504%2c163.103%2c405.143%2c241.055%2c375.088C335.727%2c338.586%2c447.639%2c315.112%2c500.922%2c228.763C555.204%2c140.795%2c550.147%2c23.857%2c518.512%2c-74.551C489.023%2c-166.285%2c392.483%2c-212.861%2c334.271%2c-289.647C270.494%2c-373.775%2c258.381%2c-507.098%2c160.539%2c-546.746C63.116%2c-586.224%2c-40.84%2c-512.198%2c-141.679%2c-482.513C-242.44%2c-452.851%2c-364.301%2c-454.566%2c-430.262%2c-372.824C-496.026%2c-291.327%2c-473.613%2c-173.112%2c-475.833%2c-68.414C-477.798%2c24.285%2c-479.418%2c117.029%2c-442.45%2c202.06C-405.044%2c288.097%2c-350.1%2c372.288%2c-266.083%2c414.034C-184.975%2c454.334%2c-90.302%2c428.836%2c0%2c421.901' fill='%23061f2e'%3e%3c/path%3e%3cpath d='M1200 923.001C1269.319 911.9390000000001 1342.233 911.0260000000001 1399.523 870.4639999999999 1455.641 830.732 1474.187 759.979 1511.671 702.335 1556.963 632.684 1630.8899999999999 578.557 1642.806 496.334 1656.124 404.433 1649.699 292.095 1580.017 230.714 1509.57 168.659 1398.401 215.247 1305.847 199.517 1227.391 186.183 1156.402 130.3 1078.275 145.442 997.656 161.067 926.486 214.91500000000002 879.3720000000001 282.174 834.4069999999999 346.366 836.837 428.605 825.592 506.168 814.3330000000001 583.831 791.159 661.28 813.504 736.5070000000001 837.621 817.7 878.592 904.614 954.875 941.422 1030.1970000000001 977.767 1117.413 936.1800000000001 1200 923.001' fill='%230c3955'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1070'%3e%3crect width='1200' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }
 
 .superior {
   -webkit-box-shadow: 1px 1px 37px 16px rgba(1, 26, 42, 1);
   -moz-box-shadow: 1px 1px 37px 16px rgba(1, 26, 42, 1);
-  box-shadow: 1px 1px 37px 16px rgba(1, 26, 42, 1);
+  box-shadow: 1px 1px 37px 16px white;
   border-radius: 1em;
   padding: 30px;
   text-align: center;
@@ -34,12 +38,10 @@ body {
 .title {
   font-size: 90px;
   margin: 30px;
-  color: #f6f1f1;
 }
 
 .subtitle {
   font-size: 30px;
-  color: #f6f1f1;
 }
 
 .playing {
@@ -53,7 +55,7 @@ input {
 }
 
 input:checked + label {
-  background-color: rgba(6, 4, 163, 1);
+  background-color: rgba(0, 55, 77, 0.88);
 }
 
 #button-character {
@@ -61,7 +63,6 @@ input:checked + label {
   width: 120px;
   height: 40px;
   background-color: brown;
-  color: white;
   border: 4px solid black;
   border-radius: 1em;
   margin: 1.4em 0 0.5em 0;
@@ -81,7 +82,6 @@ input:checked + label {
   display: flex;
   width: 180px;
   height: 100px;
-  color: white;
   align-items: center;
   justify-content: center;
 }
@@ -96,7 +96,6 @@ input:checked + label {
 .attack-button {
   cursor: pointer;
   background-color: brown;
-  color: white;
   border: 3px solid black;
   border-radius: 1em;
   padding: 8px 12px;
@@ -110,12 +109,12 @@ input:checked + label {
 #restart-button {
   background-color: brown;
   border-radius: 1em;
-  border: 3px solid;
+  border: 3px solid black;
   padding: 6px 12px;
   cursor: pointer;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 540px) {
   .characters-div {
     flex-direction: column;
     align-items: center;
@@ -129,5 +128,37 @@ input:checked + label {
     font-size: 20px;
     margin-bottom: 20px;
   }
+
+  .attack-buttons {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
 }
 
+@media (max-width: 280px) {
+  .characters-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 30px;
+    margin: auto;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .characters {
+    width: 10em;
+  }
+
+  .superior {
+    width: 14em;
+  }
+
+}

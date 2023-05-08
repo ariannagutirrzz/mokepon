@@ -1,19 +1,35 @@
-//variable para la funcion que dara paso luego de ejecutar el boton de seleccionar personaje
-let buttonCharacter = document.getElementById("button-character");
-buttonCharacter.addEventListener("click", playerCharacter);
-
-// $ para simplificar el codigo y evitar escribir document.getElementById tantas veces
-
 let playerAttack;
 let pcRandomAttack;
 let enemyLifes = 3;
 let playerLifes = 3;
 
-let sectionRestartButton = document.getElementById("restart-button");
+const Zephyr = document.getElementById("Zephyr");
+const Thorne = document.getElementById("Thorne");
+const Nyx = document.getElementById("Nyx");
+
+const characterPc = document.getElementById("character-pc");
+
+const fireButton = document.getElementById("fire-button");
+const waterButton = document.getElementById("water-button");
+const plantButton = document.getElementById("plant-button");
+
+const sectionMessage = document.getElementById("result");
+
+const sectionCharacter = document.getElementById("select-character");
+const sectionAttack = document.getElementById("select-attack");
+
+const spanPlayerLifes = document.getElementById("player-lifes");
+const spanEnemyLifes = document.getElementById("enemy-lifes");
+
+const restartButton = document.getElementById("restart-button");
+
+const sectionRestartButton = document.getElementById("restart-button");
 sectionRestartButton.style.display = "none";
 
-let sectionAttack = document.getElementById("select-attack");
 sectionAttack.style.display = "none";
+
+const buttonCharacter = document.getElementById("button-character");
+buttonCharacter.addEventListener("click", playerCharacter);
 
 function playerCharacter() {
   const $ = (selector) => document.getElementById(selector);
@@ -45,31 +61,22 @@ function playerCharacter() {
     });
     return;
   }
-  let sectionCharacter = document.getElementById("select-character");
   sectionCharacter.style.display = "none";
-
-  let sectionAttack = document.getElementById("select-attack");
   sectionAttack.style.display = "flex";
-
   pcCharacter();
 }
 
-let Zephyr = document.getElementById("Zephyr");
 Zephyr.onclick = function () {
   functionZephyr();
 };
 
-let Thorne = document.getElementById("Thorne");
 Thorne.onclick = function () {
   functionThorne();
 };
 
-let Nyx = document.getElementById("Nyx");
 Nyx.onclick = function () {
   functionNyx();
 };
-
-// new color function characters
 
 function functionZephyr() {
   Thorne.classList.remove("playing");
@@ -92,15 +99,12 @@ function functionNyx() {
   nyx.classList.add("playing");
 }
 
-//end functions
-
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function pcCharacter() {
   let randomCharacter = randomNumber(1, 3);
-  let characterPc = document.getElementById("character-pc");
 
   if (randomCharacter == 1) {
     characterPc.innerHTML = "Zephyr";
@@ -109,28 +113,20 @@ function pcCharacter() {
   } else characterPc.innerHTML = "Nyx";
 }
 
-// seleccion de ataques del jugador
-
-let fireButton = document.getElementById("fire-button");
 fireButton.addEventListener("click", fireAttack);
-let waterButton = document.getElementById("water-button");
 waterButton.addEventListener("click", waterAttack);
-let plantButton = document.getElementById("plant-button");
 plantButton.addEventListener("click", plantAttack);
 
 function fireAttack() {
   playerAttack = "FIRE ATTACK!";
-  // alert(playerAttack);
   randomAttack();
 }
 function waterAttack() {
   playerAttack = "WATER ATTACK!";
-  // alert(playerAttack);
   randomAttack();
 }
 function plantAttack() {
   playerAttack = "PLANT ATTACK!";
-  // alert(playerAttack);
   randomAttack();
 }
 
@@ -141,20 +137,15 @@ function randomAttack() {
   } else if (pcAttack == 2) {
     pcRandomAttack = "WATER ATTACK!";
   } else pcRandomAttack = "PLANT ATTACK!";
-  // alert(pcRandomAttack);
 
   combat();
 }
 
 function newMessage(result) {
-  let sectionMessage = document.getElementById("result");
   sectionMessage.innerHTML = result;
 }
 
 function combat() {
-  let spanPlayerLifes = document.getElementById("player-lifes");
-  let spanEnemyLifes = document.getElementById("enemy-lifes");
-
   if (playerAttack == pcRandomAttack) {
     newMessage("YOU TIE!");
   } else if (
@@ -176,32 +167,26 @@ function combat() {
 
 function lifeCounter() {
   if (playerLifes == 0) {
-    finalMessage("oh no, you have lost the battle :( but not the war, try again!");
+    finalMessage(
+      "oh no, you have lost the battle :( but not the war, try again!");
   } else if (enemyLifes == 0) {
     finalMessage("Congrats! you win the battle!");
   }
 }
 
 function finalMessage(finalResult) {
-  let sectionRestartButton = document.getElementById("restart-button");
+ 
   sectionRestartButton.style.display = "flex";
-
-  let sectionMessage = document.getElementById("comments");
   let message = document.createElement("p");
   message.innerHTML = finalResult;
   sectionMessage.appendChild(message);
 
-  let fireButton = document.getElementById("fire-button");
   fireButton.disabled = true;
-  let waterButton = document.getElementById("water-button");
   waterButton.disabled = true;
-  let plantButton = document.getElementById("plant-button");
   plantButton.disabled = true;
 }
 
-let restartButton = document.getElementById("restart-button");
 restartButton.addEventListener("click", restart);
-
 function restart() {
   location.reload();
 }
