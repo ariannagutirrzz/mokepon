@@ -114,6 +114,22 @@ input:checked + label {
   cursor: pointer;
 }
 
+.father {
+  display: flex;
+  gap: 6em;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.p-text {
+  height: 12em;
+  width: 10em;
+  border: 4px solid black;
+  border-radius: 1em;
+
+}
+
 @media (max-width: 540px) {
   .characters-div {
     flex-direction: column;
@@ -160,5 +176,4 @@ input:checked + label {
   .superior {
     width: 14em;
   }
-
 }

@@ -141,8 +141,19 @@ function randomAttack() {
   combat();
 }
 
+const pPlayer = document.getElementById("p-player-attack");
+const pEnemy = document.getElementById("p-enemy-attack");
+
 function newMessage(result) {
+  let _pPlayer = document.createElement("p");
+  let _pEnemy = document.createElement("p");
+
   sectionMessage.innerHTML = result;
+  _pPlayer.innerHTML = playerAttack;
+  _pEnemy.innerHTML = pcRandomAttack;
+
+  pPlayer.appendChild(_pPlayer);
+  pEnemy.appendChild(_pEnemy);
 }
 
 function combat() {
@@ -168,14 +179,14 @@ function combat() {
 function lifeCounter() {
   if (playerLifes == 0) {
     finalMessage(
-      "oh no, you have lost the battle :( but not the war, try again!");
+      "oh no, you have lost the battle :( but not the war, try again!"
+    );
   } else if (enemyLifes == 0) {
     finalMessage("Congrats! you win the battle!");
   }
 }
 
 function finalMessage(finalResult) {
- 
   sectionRestartButton.style.display = "flex";
   let message = document.createElement("p");
   message.innerHTML = finalResult;
