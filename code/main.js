@@ -157,6 +157,10 @@ function newMessage(result) {
 }
 
 function combat() {
+  const iconColor = Array.from(document.querySelectorAll("#icon-player"));
+  const iconColorEnemy = Array.from(document.querySelectorAll("#icon-enemy"));
+  // iconColors.forEach((color) => color.classList.add("new-color"));
+
   if (playerAttack == pcRandomAttack) {
     newMessage("YOU TIE!");
   } else if (
@@ -166,11 +170,11 @@ function combat() {
   ) {
     newMessage("YOU WIN!");
     enemyLifes--;
-    spanEnemyLifes.innerHTML = enemyLifes;
+    iconColorEnemy[enemyLifes].classList.add("new-color");
   } else {
     newMessage("YOU LOSE");
     playerLifes--;
-    spanPlayerLifes.innerHTML = playerLifes;
+    iconColor[playerLifes].classList.add("new-color");
   }
 
   lifeCounter();
@@ -179,7 +183,7 @@ function combat() {
 function lifeCounter() {
   if (playerLifes == 0) {
     finalMessage(
-      "oh no, you have lost the battle :( but not the war, try again!"
+      "You have lost the battle :( but not the war, try again!"
     );
   } else if (enemyLifes == 0) {
     finalMessage("Congrats! you win the battle!");

@@ -46,9 +46,9 @@
         <h2 class="subtitle">Select your attack</h2>
 
         <div class="attack-buttons">
-          <button id="fire-button" class="attack-button">Soul drain</button>
-          <button id="water-button" class="attack-button">Thunder Blade</button>
-          <button id="plant-button" class="attack-button">Ploenix Inno</button>
+          <button id="fire-button" class="attack-button">Fire</button>
+          <button id="water-button" class="attack-button">Water</button>
+          <button id="plant-button" class="attack-button">Plant</button>
         </div>
 
         <!-- SEPARACION DE NO SE -->
@@ -67,17 +67,35 @@
 
         <div class="father">
           <div class="p-text">
-            You
+            <div class="icon">
+              <i class="fa-regular fa-user" style="color: #ffffff"></i>
+              <p id="character-player"></p>
+            </div>
+
+            <p class="lifes">
+              <span id="player-lifes">
+                <i class="fa-solid fa-heart" id="icon-player"></i>
+                <i class="fa-solid fa-heart" id="icon-player"></i>
+                <i class="fa-solid fa-heart" id="icon-player"></i>
+              </span>
+            </p>
             <p id="p-player-attack"></p>
-            <p id="character-player"></p>
-            <span id="player-lifes">3</span>
           </div>
 
           <div class="p-text">
-            Your enemy
-            <p id="p-enemy-attack"> </p>
-            <p id="character-pc"></p>
-            <span id="enemy-lifes">3</span>
+            <div class="icon">
+              <i class="fa-solid fa-robot" style="color: #ffffff"></i>
+              <p id="character-pc"></p>
+            </div>
+
+            <p class="lifes">
+              <span id="enemy-lifes">
+                <i class="fa-solid fa-heart" id="icon-enemy"></i>
+                <i class="fa-solid fa-heart" id="icon-enemy"></i>
+                <i class="fa-solid fa-heart" id="icon-enemy"></i>
+              </span>
+            </p>
+            <p id="p-enemy-attack"></p>
           </div>
         </div>
       </div>
@@ -85,5 +103,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="code/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c299945942.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

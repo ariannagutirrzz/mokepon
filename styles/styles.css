@@ -99,6 +99,7 @@ input:checked + label {
   border: 3px solid black;
   border-radius: 1em;
   padding: 8px 12px;
+  width: 8em;
 }
 
 .div-restart-button {
@@ -119,7 +120,6 @@ input:checked + label {
   gap: 6em;
   justify-content: center;
   overflow: hidden;
-
 }
 
 .p-text {
@@ -127,7 +127,50 @@ input:checked + label {
   width: 10em;
   border: 4px solid black;
   border-radius: 1em;
+}
 
+#p-player-attack, #p-enemy-attack {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
+  padding: 0;
+}
+
+#p-player-attack p, #p-enemy-attack p {
+  margin: 0.5em;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#character-player {
+  margin-left: 5px;
+}
+
+#character-pc {
+  margin-left: 5px;
+}
+
+.lifes {
+  margin: 0;
+}
+
+.fa-heart {
+  color: #a52a2a;
+}
+
+.new-color {
+  color: gray;
+}
+
+#enemy-lifes,
+#player-lifes {
+  display: flex;
+  gap: 0.35em;
+  justify-content: center;
 }
 
 @media (max-width: 540px) {
